@@ -9,19 +9,25 @@
 /* Begin PBXBuildFile section */
 		FCC9299721B459F700CA8211 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9299621B459F700CA8211 /* AppDelegate.swift */; };
 		FCC9299921B459F700CA8211 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9299821B459F700CA8211 /* ViewController.swift */; };
-		FCC9299C21B459F800CA8211 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC9299A21B459F800CA8211 /* Main.storyboard */; };
 		FCC9299E21B45A0600CA8211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCC9299D21B45A0600CA8211 /* Assets.xcassets */; };
 		FCC929A121B45A0600CA8211 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCC9299F21B45A0600CA8211 /* LaunchScreen.storyboard */; };
+		FCC929A921B45A8400CA8211 /* BookmarkIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC929A821B45A8300CA8211 /* BookmarkIcon.swift */; };
+		FCC929AB21B45AFC00CA8211 /* DocumentIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC929AA21B45AFC00CA8211 /* DocumentIcon.swift */; };
+		FCC929AD21B45B9200CA8211 /* SearchIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC929AC21B45B9200CA8211 /* SearchIcon.swift */; };
+		FCC929AF21B45BE600CA8211 /* HutIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC929AE21B45BE600CA8211 /* HutIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FCC9299321B459F700CA8211 /* EssentialIcons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EssentialIcons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC9299621B459F700CA8211 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCC9299821B459F700CA8211 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FCC9299B21B459F800CA8211 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCC9299D21B45A0600CA8211 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCC929A021B45A0600CA8211 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCC929A221B45A0600CA8211 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCC929A821B45A8300CA8211 /* BookmarkIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkIcon.swift; sourceTree = "<group>"; };
+		FCC929AA21B45AFC00CA8211 /* DocumentIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentIcon.swift; sourceTree = "<group>"; };
+		FCC929AC21B45B9200CA8211 /* SearchIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchIcon.swift; sourceTree = "<group>"; };
+		FCC929AE21B45BE600CA8211 /* HutIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HutIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +62,23 @@
 			children = (
 				FCC9299621B459F700CA8211 /* AppDelegate.swift */,
 				FCC9299821B459F700CA8211 /* ViewController.swift */,
-				FCC9299A21B459F800CA8211 /* Main.storyboard */,
+				FCC929B021B45CE600CA8211 /* Icons */,
 				FCC9299D21B45A0600CA8211 /* Assets.xcassets */,
 				FCC9299F21B45A0600CA8211 /* LaunchScreen.storyboard */,
 				FCC929A221B45A0600CA8211 /* Info.plist */,
 			);
 			path = EssentialIcons;
+			sourceTree = "<group>";
+		};
+		FCC929B021B45CE600CA8211 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				FCC929A821B45A8300CA8211 /* BookmarkIcon.swift */,
+				FCC929AA21B45AFC00CA8211 /* DocumentIcon.swift */,
+				FCC929AC21B45B9200CA8211 /* SearchIcon.swift */,
+				FCC929AE21B45BE600CA8211 /* HutIcon.swift */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +141,6 @@
 			files = (
 				FCC929A121B45A0600CA8211 /* LaunchScreen.storyboard in Resources */,
 				FCC9299E21B45A0600CA8211 /* Assets.xcassets in Resources */,
-				FCC9299C21B459F800CA8211 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,21 +152,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCC9299921B459F700CA8211 /* ViewController.swift in Sources */,
+				FCC929AB21B45AFC00CA8211 /* DocumentIcon.swift in Sources */,
+				FCC929AF21B45BE600CA8211 /* HutIcon.swift in Sources */,
 				FCC9299721B459F700CA8211 /* AppDelegate.swift in Sources */,
+				FCC929AD21B45B9200CA8211 /* SearchIcon.swift in Sources */,
+				FCC929A921B45A8400CA8211 /* BookmarkIcon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FCC9299A21B459F800CA8211 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FCC9299B21B459F800CA8211 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FCC9299F21B45A0600CA8211 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -285,6 +297,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CG9RTC2HJD;
 				INFOPLIST_FILE = EssentialIcons/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +316,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CG9RTC2HJD;
 				INFOPLIST_FILE = EssentialIcons/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
