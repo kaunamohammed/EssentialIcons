@@ -12,7 +12,7 @@ class HutIcon: UIView {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        
+
         let hutIconLayer = CAShapeLayer()
         hutIconLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         hutIconLayer.fillColor = UIColor.clear.cgColor
