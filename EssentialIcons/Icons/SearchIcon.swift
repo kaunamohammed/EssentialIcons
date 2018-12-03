@@ -14,7 +14,7 @@ class SearchIcon: UIView {
         super.draw(rect)
         
         let searchLayer = CAShapeLayer()
-        searchLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).cgColor
+        searchLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         searchLayer.fillColor = UIColor.clear.cgColor
         searchLayer.lineWidth = 1
         searchLayer.lineJoin = .miter
