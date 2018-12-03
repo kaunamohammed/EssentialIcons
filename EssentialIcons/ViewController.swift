@@ -32,7 +32,7 @@ class ViewController: UIViewController {
                                                           width: 55,
                                                           height: 60))
         
-        let hutIcon = HutIcon(frame: CGRect(x: 300,
+        let hutIcon = HutIcon(frame: CGRect(x: 299,
                                             y: 300,
                                             width: 60,
                                             height: 60))
