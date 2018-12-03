@@ -10,28 +10,32 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func loadView() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         view.backgroundColor = .white
-        
-        let searchButton = SearchIcon(frame: CGRect(x: 100,
+    }
+    
+    override func loadView() {
+        super.loadView()
+        let searchButton = SearchIcon(frame: CGRect(x: 20,
                                                       y: 300,
-                                                      width: 30,
-                                                      height: 30))
+                                                      width: 60,
+                                                      height: 60))
         
-        let documentButton = DocumentIcon(frame: CGRect(x: 150,
+        let documentButton = DocumentIcon(frame: CGRect(x: 110,
                                                                y: 300,
-                                                               width: 25,
-                                                               height: 30))
+                                                               width: 55,
+                                                               height: 60))
         
-        let bookmarkButton = BookmarkIcon(frame: CGRect(x: 200,
+        let bookmarkButton = BookmarkIcon(frame: CGRect(x: 210,
                                                           y: 300,
-                                                          width: 25,
-                                                          height: 30))
+                                                          width: 55,
+                                                          height: 60))
         
-        let hutIcon = HutIcon(frame: CGRect(x: 250,
+        let hutIcon = HutIcon(frame: CGRect(x: 300,
                                             y: 300,
-                                            width: 30,
-                                            height: 30))
+                                            width: 60,
+                                            height: 60))
         
         view.add(hutIcon,
                  documentButton,

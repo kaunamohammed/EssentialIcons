@@ -14,9 +14,9 @@ class HutIcon: UIView {
         super.draw(rect)
         
         let hutIconLayer = CAShapeLayer()
-        hutIconLayer.strokeColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1).cgColor
+        hutIconLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         hutIconLayer.fillColor = UIColor.clear.cgColor
-        hutIconLayer.lineJoin = .round
+        hutIconLayer.lineJoin = .miter
         hutIconLayer.lineWidth = 1
         
         let height = rect.size.height

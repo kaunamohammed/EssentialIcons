@@ -15,7 +15,7 @@ class BookmarkIcon: UIView {
         
         let saveIconLayer = CAShapeLayer()
         saveIconLayer.lineWidth = 1
-        saveIconLayer.strokeColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1).cgColor
+        saveIconLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         saveIconLayer.fillColor = UIColor.clear.cgColor
         saveIconLayer.lineJoin = .round
         

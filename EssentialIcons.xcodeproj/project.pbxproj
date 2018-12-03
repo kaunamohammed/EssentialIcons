@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC0ADDBF21B54E6F00FEA22C /* PaperPlaneIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0ADDBE21B54E6F00FEA22C /* PaperPlaneIcon.swift */; };
 		FCC9299721B459F700CA8211 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9299621B459F700CA8211 /* AppDelegate.swift */; };
 		FCC9299921B459F700CA8211 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9299821B459F700CA8211 /* ViewController.swift */; };
 		FCC9299E21B45A0600CA8211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCC9299D21B45A0600CA8211 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC0ADDBE21B54E6F00FEA22C /* PaperPlaneIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperPlaneIcon.swift; sourceTree = "<group>"; };
 		FCC9299321B459F700CA8211 /* EssentialIcons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EssentialIcons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC9299621B459F700CA8211 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCC9299821B459F700CA8211 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				FCC929AA21B45AFC00CA8211 /* DocumentIcon.swift */,
 				FCC929AC21B45B9200CA8211 /* SearchIcon.swift */,
 				FCC929AE21B45BE600CA8211 /* HutIcon.swift */,
+				FC0ADDBE21B54E6F00FEA22C /* PaperPlaneIcon.swift */,
 			);
 			path = Icons;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				FCC929AB21B45AFC00CA8211 /* DocumentIcon.swift in Sources */,
 				FCC929AF21B45BE600CA8211 /* HutIcon.swift in Sources */,
 				FCC9299721B459F700CA8211 /* AppDelegate.swift in Sources */,
+				FC0ADDBF21B54E6F00FEA22C /* PaperPlaneIcon.swift in Sources */,
 				FCC929AD21B45B9200CA8211 /* SearchIcon.swift in Sources */,
 				FCC929A921B45A8400CA8211 /* BookmarkIcon.swift in Sources */,
 			);

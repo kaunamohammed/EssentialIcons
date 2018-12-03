@@ -14,7 +14,7 @@ class DocumentIcon: UIView {
         super.draw(rect)
         
         let documentLayer = CAShapeLayer()
-        documentLayer.strokeColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1).cgColor
+        documentLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         documentLayer.fillColor = UIColor.clear.cgColor
         documentLayer.lineWidth = 1
         documentLayer.lineJoin = .miter
@@ -38,7 +38,6 @@ class DocumentIcon: UIView {
         
         documentLayer.path = path
         layer.addSublayer(documentLayer)
-        addAnimation(to: documentLayer)
     }
     
 }
