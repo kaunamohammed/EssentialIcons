@@ -10,14 +10,17 @@ import UIKit
 
 class SearchIcon: UIView {
     
+    private lazy var iconLayer: CAShapeLayer = {
+        let layer = CAShapeLayer()
+        layer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        layer.fillColor = UIColor.clear.cgColor
+        layer.lineWidth = 1
+        layer.lineJoin = .miter
+        return layer
+    }()
+    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        
-        let searchLayer = CAShapeLayer()
-        searchLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        searchLayer.fillColor = UIColor.clear.cgColor
-        searchLayer.lineWidth = 1
-        searchLayer.lineJoin = .miter
         
         let height = rect.size.height
         let scaleFactor = height * 0.7
@@ -35,8 +38,12 @@ class SearchIcon: UIView {
         path.addLine(to: CGPoint(x: height - lineHeightInset,
                                  y: height - lineHeightInset))
         
-        searchLayer.path = path.cgPath
-        layer.addSublayer(searchLayer)
+        iconLayer.path = path.cgPath
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.addSublayer(iconLayer)
     }
     
 }

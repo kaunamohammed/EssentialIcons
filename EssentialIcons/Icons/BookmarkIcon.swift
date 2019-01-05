@@ -10,15 +10,18 @@ import UIKit
 
 class BookmarkIcon: UIView {
     
+    private lazy var iconLayer: CAShapeLayer = {
+        let layer = CAShapeLayer()
+        layer.lineWidth = 1
+        layer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        layer.fillColor = UIColor.clear.cgColor
+        layer.lineJoin = .round
+        return layer
+    }() 
+    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        
-        let saveIconLayer = CAShapeLayer()
-        saveIconLayer.lineWidth = 1
-        saveIconLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        saveIconLayer.fillColor = UIColor.clear.cgColor
-        saveIconLayer.lineJoin = .round
-        
+    
         let path = CGMutablePath()
         
         let height = rect.size.height
@@ -34,8 +37,14 @@ class BookmarkIcon: UIView {
         path.addLine(to: CGPoint(x: width - startingPoint, y: height - bottomInset))
         path.addLine(to: CGPoint(x: width - startingPoint, y: startingPoint))
         path.addLine(to: CGPoint(x: startingPoint, y: startingPoint))
-        saveIconLayer.path = path
         
-        layer.addSublayer(saveIconLayer)
+        iconLayer.path = path
+        
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.addSublayer(iconLayer)
+    }
+    
 }

@@ -10,14 +10,17 @@ import UIKit
 
 class PaperPlaneIcon: UIView {
     
+    private lazy var iconLayer: CAShapeLayer = {
+        let layer = CAShapeLayer()
+        layer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        layer.fillColor = UIColor.clear.cgColor
+        layer.lineWidth = 1
+        layer.lineJoin = .miter
+        return layer
+    }()
+    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        
-        let planeLayer = CAShapeLayer()
-        planeLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        planeLayer.fillColor = UIColor.clear.cgColor
-        planeLayer.lineWidth = 1
-        planeLayer.lineJoin = .miter
         
         let height = rect.size.height
         let width = rect.size.width
@@ -32,8 +35,13 @@ class PaperPlaneIcon: UIView {
         path.move(to: CGPoint(x: halfWidth, y: height))
         path.addLine(to: CGPoint(x: halfWidth, y: halfHeight))
         
-        planeLayer.path = path
-        layer.addSublayer(planeLayer)
+        iconLayer.path = path
+        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.addSublayer(iconLayer)
         transform = CGAffineTransform(rotationAngle: .pi / 4)
     }
     

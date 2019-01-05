@@ -10,14 +10,17 @@ import UIKit
 
 class DocumentIcon: UIView {
     
+    private lazy var iconLayer: CAShapeLayer = {
+        let layer = CAShapeLayer()
+        layer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        layer.fillColor = UIColor.clear.cgColor
+        layer.lineWidth = 1
+        layer.lineJoin = .miter
+        return layer
+    }()
+    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        
-        let documentLayer = CAShapeLayer()
-        documentLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        documentLayer.fillColor = UIColor.clear.cgColor
-        documentLayer.lineWidth = 1
-        documentLayer.lineJoin = .miter
         
         let height = rect.size.height
         let width = rect.size.width
@@ -25,6 +28,7 @@ class DocumentIcon: UIView {
         let foldInset: CGFloat = height * 0.3
         
         let path = CGMutablePath()
+        
         path.move(to: .zero)
         path.addLine(to: CGPoint(x: 0, y: height))
         path.addLine(to: CGPoint(x: width, y: height))
@@ -36,8 +40,12 @@ class DocumentIcon: UIView {
         path.addLine(to: CGPoint(x: width - foldInset, y: foldInset))
         path.addLine(to: CGPoint(x: width, y: foldInset))
         
-        documentLayer.path = path
-        layer.addSublayer(documentLayer)
+        iconLayer.path = path
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.addSublayer(iconLayer)
     }
     
 }

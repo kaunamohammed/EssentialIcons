@@ -10,14 +10,17 @@ import UIKit
 
 class HutIcon: UIView {
     
+    private lazy var iconLayer: CAShapeLayer = {
+        let layer = CAShapeLayer()
+        layer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        layer.fillColor = UIColor.clear.cgColor
+        layer.lineJoin = .miter
+        layer.lineWidth = 1
+        return layer
+    }()
+    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-
-        let hutIconLayer = CAShapeLayer()
-        hutIconLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        hutIconLayer.fillColor = UIColor.clear.cgColor
-        hutIconLayer.lineJoin = .miter
-        hutIconLayer.lineWidth = 1
         
         let height = rect.size.height
         let width = rect.size.width
@@ -43,8 +46,13 @@ class HutIcon: UIView {
         path.addLine(to: CGPoint(x: doorPosition + doorWidth, y: height - doorHeight))
         path.addLine(to: CGPoint(x: doorPosition + doorWidth, y: height))
         
-        hutIconLayer.path = path
+        iconLayer.path = path
         
-        layer.addSublayer(hutIconLayer)
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.addSublayer(iconLayer)
+    }
+    
 }
