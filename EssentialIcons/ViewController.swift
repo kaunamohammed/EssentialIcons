@@ -27,11 +27,16 @@ class ViewController: UIViewController {
                                                           width: 40,
                                                           height: 60))
         
-        let heartIcon = HeartIcon(frame: CGRect(x: 100,
+        let heartIcon = HeartIcon(frame: CGRect(x: 90,
                                                 y: 400,
                                                 width: 100,
                                                 height: 100))
 
+        let igtvIcon = IGTVIcon(frame: CGRect(x: 210,
+                                                y: 420,
+                                                width: 60,
+                                                height: 60))
+        
         let documentButton = DocumentIcon(frame: CGRect(x: 110,
                                                         y: 300,
                                                         width: 55,
@@ -52,7 +57,8 @@ class ViewController: UIViewController {
                  searchButton,
                  bookmarkButton,
                  paperPlaneIcon,
-                 heartIcon)
+                 heartIcon,
+                 igtvIcon)
         
     }
 }
