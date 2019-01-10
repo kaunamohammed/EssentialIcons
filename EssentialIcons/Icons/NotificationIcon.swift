@@ -14,21 +14,25 @@ class NotificationIcon: UIView {
         didSet { setNeedsDisplay() }
     }
     
-    public var bubbleColor: CGColor = #colorLiteral(red: 1, green: 0.1215686275, blue: 0.262745098, alpha: 1) {
+    public var bubbleColor: UIColor = #colorLiteral(red: 1, green: 0.1215686275, blue: 0.262745098, alpha: 1) {
+        didSet { setNeedsDisplay() }
+    }
+    
+    public var notificationRectangleColor: UIColor = #colorLiteral(red: 1, green: 0.1215686275, blue: 0.262745098, alpha: 1) {
         didSet { setNeedsDisplay() }
     }
     
     private lazy var notificationPathLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
         layer.fillColor = UIColor.clear.cgColor
-        layer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        layer.strokeColor = notificationRectangleColor.cgColor
         layer.lineWidth = lineWidth
         return layer
     }()
     
     private lazy var notificationLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
-        layer.fillColor = bubbleColor
+        layer.fillColor = bubbleColor.cgColor
         return layer
     }()
     

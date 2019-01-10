@@ -10,19 +10,23 @@ import UIKit
 
 class ConnectedDeviceIcon: UIView {
     
-    public var connectionStatusColor: CGColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
+    public var connectionStatusColor: UIColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1) {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
     
     private lazy var rectangleLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
         layer.fillColor = UIColor.clear.cgColor
-        layer.strokeColor = connectionStatusColor
+        layer.strokeColor = connectionStatusColor.cgColor
         layer.lineWidth = 5
         return layer
     }()
     
     private lazy var triangleLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
-        layer.fillColor = connectionStatusColor
+        layer.fillColor = connectionStatusColor.cgColor
         layer.lineWidth = 1.5
         return layer
     }()
