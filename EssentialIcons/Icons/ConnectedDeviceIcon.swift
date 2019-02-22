@@ -12,6 +12,8 @@ class ConnectedDeviceIcon: UIView {
     
     public var connectionStatusColor: UIColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1) {
         didSet {
+            triangleLayer.fillColor = connectionStatusColor.cgColor
+            rectangleLayer.strokeColor = connectionStatusColor.cgColor
             setNeedsDisplay()
         }
     }
@@ -19,14 +21,12 @@ class ConnectedDeviceIcon: UIView {
     private lazy var rectangleLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
         layer.fillColor = UIColor.clear.cgColor
-        layer.strokeColor = connectionStatusColor.cgColor
         layer.lineWidth = 5
         return layer
     }()
     
     private lazy var triangleLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
-        layer.fillColor = connectionStatusColor.cgColor
         layer.lineWidth = 1.5
         return layer
     }()

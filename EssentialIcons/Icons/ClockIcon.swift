@@ -11,11 +11,15 @@ import UIKit
 class ClockIcon: UIView {
     
     public var lineWidth: CGFloat = 3 {
-        didSet { setNeedsDisplay() }
+        didSet {
+            iconLayer.lineWidth = lineWidth
+            setNeedsDisplay()
+        }
     }
     
     public var color: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
         didSet {
+            iconLayer.strokeColor = color.cgColor
             setNeedsDisplay()
         }
     }
@@ -23,8 +27,6 @@ class ClockIcon: UIView {
     private lazy var iconLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
         layer.fillColor = UIColor.clear.cgColor
-        layer.strokeColor = color.cgColor
-        layer.lineWidth = lineWidth
         return layer
     }()
     

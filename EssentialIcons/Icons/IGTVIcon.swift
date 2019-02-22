@@ -11,14 +11,16 @@ import UIKit
 class IGTVIcon: UIView {
     
     public var lineWidth: CGFloat = 1 {
-        didSet { setNeedsDisplay() }
+        didSet {
+            iconLayer.lineWidth = lineWidth
+            setNeedsDisplay()
+        }
     }
     
     private lazy var iconLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
         layer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         layer.fillColor = UIColor.clear.cgColor
-        layer.lineWidth = lineWidth
         return layer
     }()
     

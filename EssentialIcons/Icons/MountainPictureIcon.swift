@@ -12,21 +12,28 @@ import UIKit
 class MountainPictureIcon: UIView {
     
     public var lineWidth: CGFloat = 1.5 {
-        didSet { setNeedsDisplay() }
+        didSet {
+            iconLayer.lineWidth = lineWidth
+            setNeedsDisplay()
+        }
     }
     
     public var pictureBackgroundColor: CGColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
-        didSet { setNeedsDisplay() }
+        didSet {
+            layer.backgroundColor = pictureBackgroundColor
+            setNeedsDisplay()
+        }
     }
     
-    public var mountainColor: CGColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) {
-        didSet { setNeedsDisplay() }
+    public var mountainColor: UIColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) {
+        didSet {
+            iconLayer.fillColor = mountainColor.cgColor
+            setNeedsDisplay()
+        }
     }
     
     private lazy var iconLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
-        layer.fillColor = mountainColor
-        layer.lineWidth = lineWidth
         return layer
     }()
     
@@ -64,7 +71,6 @@ class MountainPictureIcon: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.backgroundColor = pictureBackgroundColor
         layer.borderWidth = 1
         layer.cornerRadius = 5
         layer.addSublayer(iconLayer)

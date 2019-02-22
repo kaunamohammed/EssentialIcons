@@ -11,28 +11,34 @@ import UIKit
 class NotificationIcon: UIView {
     
     public var lineWidth: CGFloat = 2 {
-        didSet { setNeedsDisplay() }
+        didSet {
+            notificationPathLayer.lineWidth = lineWidth
+            setNeedsDisplay()
+        }
     }
     
     public var bubbleColor: UIColor = #colorLiteral(red: 1, green: 0.1215686275, blue: 0.262745098, alpha: 1) {
-        didSet { setNeedsDisplay() }
+        didSet {
+            notificationLayer.fillColor = bubbleColor.cgColor
+            setNeedsDisplay()
+        }
     }
     
     public var notificationRectangleColor: UIColor = #colorLiteral(red: 1, green: 0.1215686275, blue: 0.262745098, alpha: 1) {
-        didSet { setNeedsDisplay() }
+        didSet {
+            notificationPathLayer.strokeColor = notificationRectangleColor.cgColor
+            setNeedsDisplay()
+        }
     }
     
     private lazy var notificationPathLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
         layer.fillColor = UIColor.clear.cgColor
-        layer.strokeColor = notificationRectangleColor.cgColor
-        layer.lineWidth = lineWidth
         return layer
     }()
     
     private lazy var notificationLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
-        layer.fillColor = bubbleColor.cgColor
         return layer
     }()
     

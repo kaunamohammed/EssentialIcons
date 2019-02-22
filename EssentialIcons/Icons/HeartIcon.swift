@@ -10,11 +10,23 @@ import UIKit
 
 class HeartIcon: UIView {
     
+    public var lineWidth: CGFloat = 1 {
+        didSet {
+            iconLayer.lineWidth = lineWidth
+            setNeedsDisplay()
+        }
+    }
+    
+    public var color: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
+        didSet {
+            iconLayer.strokeColor = color.cgColor
+            setNeedsDisplay()
+        }
+    }
+    
     lazy var iconLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
-        layer.strokeColor = #colorLiteral(red: 0, green: 0.07843137255, blue: 0.168627451, alpha: 1)
         layer.fillColor = UIColor.clear.cgColor
-        layer.lineWidth = 1
         return layer
     }()
     

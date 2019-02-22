@@ -10,12 +10,23 @@ import UIKit
 
 class HutIcon: UIView {
     
+    public var color: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
+        didSet {
+            iconLayer.strokeColor = color.cgColor
+            setNeedsDisplay()
+        }
+    }
+    
+    public var lineWidth: CGFloat = 1 {
+        didSet {
+            iconLayer.lineWidth = lineWidth
+            setNeedsDisplay()
+        }
+    }
+    
     private lazy var iconLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
-        layer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         layer.fillColor = UIColor.clear.cgColor
-        layer.lineJoin = .miter
-        layer.lineWidth = 1
         return layer
     }()
     
